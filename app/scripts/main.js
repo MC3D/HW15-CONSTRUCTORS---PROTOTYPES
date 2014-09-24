@@ -43,12 +43,12 @@ function expect(target) {
 })();
 
 function Dog(options){
-    options = options || {};
+
+  options = options || {};
 
   _.defaults(options, {
     hungry: true,
     status: 'normal',
-    owner: undefined
   });
 
   _.extend(this, options);
