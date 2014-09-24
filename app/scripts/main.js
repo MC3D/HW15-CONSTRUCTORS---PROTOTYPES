@@ -42,21 +42,6 @@ function expect(target) {
   'use strict';
 })();
 
-
-
-
-
-
-// function Dog(x) {
-//   'use strict';
-//    x = x || {};
-//    if(x.color === undefined){
-//    this.color = 'none'
-//   } else {
-//     this.color = x.color;
-//
-//   }
-
 function Dog(options){
     options = options || {};
 
@@ -80,10 +65,6 @@ function Human(options) {
   _.extend(this, options);
 }
 
-Dog.prototype.owner = function(sadie) {
-   sadie.owner = 'Mason';
-};
- 
 Human.prototype.pet = function(dog){
    dog.status = 'happy';
 };
@@ -91,10 +72,6 @@ Human.prototype.pet = function(dog){
 Human.prototype.feed = function(dog){
    dog.hungry = false;
 };
-//
-// Dog.prototype.owner = function(human) {
-//   sadie.owner = 'Mason';
-// };
 
 //        __
 //   ____/ /___  ____ ______
