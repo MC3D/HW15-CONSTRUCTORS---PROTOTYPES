@@ -16,6 +16,7 @@ function it(description, contents){
 // A simple function for expecting values
 // Ex: expect(sadie.color).toBe('black'); // should return true
 function expect(target) {
+  'use strict';
   return {
     toBe: function(expectation) {
       if (target === expectation) {
@@ -40,35 +41,31 @@ function expect(target) {
 // use strict mode
 (function() {
   'use strict';
-})();
+
 
 function Dog(options){
 
-  options = options || {};
-
-  _.defaults(options, {
+  var defaults = {
     hungry: true,
-    status: 'normal',
-  });
+    status: 'normal'
+  };
 
-  _.extend(this, options);
+  $.extend(this, defaults, options);
 }
 
 function Human(options) {
 
-  options = options || {};
-
-  _.defaults(options, {
+  var defaults = {
     cool: false
-  });
+  };
 
-  _.extend(this, options);
+  $.extend(this, defaults, options);
 }
 
 Human.prototype.pet = function(dog){
    dog.status = 'happy';
 };
-//
+
 Human.prototype.feed = function(dog){
    dog.hungry = false;
 };
@@ -146,3 +143,4 @@ it("should make Julia cool and Mason not cool", function(){
   expect(julia.cool).toBe(true);
   expect(mason.cool).toBe(false);
 });
+})();
